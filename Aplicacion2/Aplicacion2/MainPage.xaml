@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aplicacion2.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Tercer actividad en xamarin" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Entry Text="{Binding Nombre}" Placeholder="Ingresa tu nombre"> </Entry>
+        <Entry Text="{Binding Apellido1}" Placeholder="Ingresa tu primer apellido"></Entry>
+        <Entry Text="{Binding Apellido2}" Placeholder="Ingresa tu segundo apellido"></Entry>
+        <Label Text="Hola compa, tu nombre ingresado es: "/>
+        <Label>
+            <Label.Text>
+                <MultiBinding StringFormat="{}{0} {1} {2}">
+                    <Binding Path="Nombre" />
+                    <Binding Path="Apellido1" />
+                    <Binding Path="Apellido2" />
+                </MultiBinding>
+            </Label.Text>
+        </Label>
+
+    </StackLayout>
+
+</ContentPage>
